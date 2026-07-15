@@ -65,7 +65,7 @@ def process_and_index_pdf(uploaded_file):
     vector_db.save_local(FAISS_INDEX_PATH)
     vector_retriever = vector_db.as_retriever(search_kwargs={"k": 3})
 
-    # Initialize Gemini 2.5 Flash Model Core
+    # Initialize Gemini 3.5 Flash Model Core
     llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=GOOGLE_API_KEY)
 
     # Build prompt configurations
