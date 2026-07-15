@@ -65,7 +65,7 @@ def process_and_index_pdf(uploaded_file):
     vector_db.save_local(FAISS_INDEX_PATH)
     vector_retriever = vector_db.as_retriever(search_kwargs={"k": 3})
 
-    # Initialize Gemini 3.5 Flash Model Core
+    # Initialize Gemini 2.5 Flash Model Core
     llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=GOOGLE_API_KEY)
 
     # Build prompt configurations
@@ -103,9 +103,7 @@ with st.sidebar:
                     # Clear past records if a brand new knowledge layout script is loaded
                     st.session_state["chat_history"] = [] 
                     st.success("🎉 Engine operational! Ready to handle prompts.")
-[14:28, 15/07/2026] +91 99650 93254: manual (PDF)", type=["pdf"])
 
-   
 # 🎬 5. Main Screen Execution & Continuous Scrolling Chat UI
 if "rag_chain" in st.session_state:
     
@@ -152,4 +150,3 @@ if "rag_chain" in st.session_state:
                     st.error(f"Execution boundary interrupted: {e}")
 else:
     st.warning("👈 Please supply a PDF document and build the knowledge index in the sidebar to open the query frame.")
-
