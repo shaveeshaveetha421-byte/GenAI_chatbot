@@ -96,11 +96,6 @@ with st.sidebar:
 
     if uploaded_file:
         if st.button("🏗️ Build Knowledge Base"):
-            with st.spinner("Proce…
-[14:28, 15/07/2026] +91 99650 93254: manual (PDF)", type=["pdf"])
-
-    if uploaded_file:
-        if st.button("🏗️ Build Knowledge Base"):
             with st.spinner("Processing document layout..."):
                 compiled_chain = process_and_index_pdf(uploaded_file)
                 if compiled_chain:
@@ -108,7 +103,9 @@ with st.sidebar:
                     # Clear past records if a brand new knowledge layout script is loaded
                     st.session_state["chat_history"] = [] 
                     st.success("🎉 Engine operational! Ready to handle prompts.")
+[14:28, 15/07/2026] +91 99650 93254: manual (PDF)", type=["pdf"])
 
+   
 # 🎬 5. Main Screen Execution & Continuous Scrolling Chat UI
 if "rag_chain" in st.session_state:
     
